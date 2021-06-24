@@ -15,7 +15,7 @@ What these guys have tried to incorporate
 
 - The main problem for Indian mother tongue languages is very less dataset or i will say clean parallel corpora for these languages was not available. So, these guys have cleaned and pre-processed the data for these languages-
 
-![](RackMultipart20210624-4-188dojs_html_6323c002dbbeccce.png)
+![](Images/image0.png)
 
 - These guys have created models for languages
   - English - Tamil
@@ -28,7 +28,7 @@ What these guys have tried to incorporate
 
 So, in this case study I am going to first replicate their and then she what new things I can add into this to get better bleu scores or seven try with different metric than bleu score
 
-# ![](RackMultipart20210624-4-188dojs_html_237499165a11f2b9.gif)
+# ![](Images/image1.png)
 
 # Research-Papers/Solutions/Architectures/Kernels
 
@@ -37,18 +37,18 @@ So, in this case study I am going to first replicate their and then she what new
 
 **Overview** -
 
-![](RackMultipart20210624-4-188dojs_html_fa391bffbaabbd18.png)
+![](Images/image2.png)
 
 From the traditional seq2seq models after the encoder part we receive a w vector which acts as an input to our decoder hidden state. So the drawback for this is if input sentences are lengthy then the vector w wouldn&#39;t be able to capture the essence of the input sentence.
 
-![](RackMultipart20210624-4-188dojs_html_9c08c03aa607b3e.png)
+![](Images/image3.png)
 
 whereas attention models instead of receiving a vector from the last layer of encoder they receive a context vector, which is basically a weighted sum of outputs of the encoder. So, these weights help in focusing on a particular part of the input sentence.
 
 1. [https://bpemb.h-its.org/](https://bpemb.h-its.org/) - BPEmb is a collection of pre-trained subword embeddings in 275 languages, based on Byte-Pair Encoding (BPE) and trained on Wikipedia. Its intended use is as input for neural models in natural language processing.
 2. [https://towardsdatascience.com/byte-pair-encoding-the-dark-horse-of-modern-nlp-eb36c7df4f10](https://towardsdatascience.com/byte-pair-encoding-the-dark-horse-of-modern-nlp-eb36c7df4f10) -Byte Pair Encoding - A simple data compression algorithm first introduced in 1994 supercharging almost all advanced NLP models of today (including BERT).
 
-![](RackMultipart20210624-4-188dojs_html_ec6167b5545ac07a.png)
+![](Images/image4.png)
 
 1. [EnTam: An English-Tamil Parallel Corpus (EnTam v2.0) (cuni.cz)](https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-1454)
 
@@ -60,7 +60,7 @@ These links have corpus for languages Tamil, Malayalam and Urdu languages.
 
 1. [https://www.tensorflow.org/tutorials/text/transformer](https://www.tensorflow.org/tutorials/text/transformer) - this an example of multi head attention model with code explanation.
 
-![](RackMultipart20210624-4-188dojs_html_237499165a11f2b9.gif)
+![](Images/image5.png)
 
 # First Cut Approach
 
