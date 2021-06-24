@@ -28,29 +28,28 @@ What these guys have tried to incorporate
 
 So, in this case study I am going to first replicate their and then she what new things I can add into this to get better bleu scores or seven try with different metric than bleu score
 
-# ![](Images/image1.png)
 
 # Research-Papers/Solutions/Architectures/Kernels
 
 1. [[2004.13819] Neural Machine Translation for Low-Resourced Indian Languages (arxiv.org)](https://arxiv.org/abs/2004.13819) - This is the same paper that my case study is based on and also my overview.
 2. [https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/4150/attention-models-in-deep-learning/8/module-8-neural-networks-computer-vision-and-deep-learning](https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/4150/attention-models-in-deep-learning/8/module-8-neural-networks-computer-vision-and-deep-learning) - this is the link from the Applied AI live session for attention based models, in this they have explained the drawbacks of general sequence to sequence models, why should we use attention models and how they works.
 
-**Overview** -
+Overview -
 
-![](Images/image2.png)
+![](Images/image1.png)
 
 From the traditional seq2seq models after the encoder part we receive a w vector which acts as an input to our decoder hidden state. So the drawback for this is if input sentences are lengthy then the vector w wouldn&#39;t be able to capture the essence of the input sentence.
 
-![](Images/image3.png)
+![](Images/image2.png)
 
 whereas attention models instead of receiving a vector from the last layer of encoder they receive a context vector, which is basically a weighted sum of outputs of the encoder. So, these weights help in focusing on a particular part of the input sentence.
 
-1. [https://bpemb.h-its.org/](https://bpemb.h-its.org/) - BPEmb is a collection of pre-trained subword embeddings in 275 languages, based on Byte-Pair Encoding (BPE) and trained on Wikipedia. Its intended use is as input for neural models in natural language processing.
-2. [https://towardsdatascience.com/byte-pair-encoding-the-dark-horse-of-modern-nlp-eb36c7df4f10](https://towardsdatascience.com/byte-pair-encoding-the-dark-horse-of-modern-nlp-eb36c7df4f10) -Byte Pair Encoding - A simple data compression algorithm first introduced in 1994 supercharging almost all advanced NLP models of today (including BERT).
+3. [https://bpemb.h-its.org/](https://bpemb.h-its.org/) - BPEmb is a collection of pre-trained subword embeddings in 275 languages, based on Byte-Pair Encoding (BPE) and trained on Wikipedia. Its intended use is as input for neural models in natural language processing.
+4. [https://towardsdatascience.com/byte-pair-encoding-the-dark-horse-of-modern-nlp-eb36c7df4f10](https://towardsdatascience.com/byte-pair-encoding-the-dark-horse-of-modern-nlp-eb36c7df4f10) -Byte Pair Encoding - A simple data compression algorithm first introduced in 1994 supercharging almost all advanced NLP models of today (including BERT).
 
-![](Images/image4.png)
+![](Images/image3.png)
 
-1. [EnTam: An English-Tamil Parallel Corpus (EnTam v2.0) (cuni.cz)](https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-1454)
+5. [EnTam: An English-Tamil Parallel Corpus (EnTam v2.0) (cuni.cz)](https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-1454)
 
 [OPUS - an open source parallel corpus (nlpl.eu)](https://opus.nlpl.eu/)
 
@@ -58,24 +57,6 @@ whereas attention models instead of receiving a vector from the last layer of en
 
 These links have corpus for languages Tamil, Malayalam and Urdu languages.
 
-1. [https://www.tensorflow.org/tutorials/text/transformer](https://www.tensorflow.org/tutorials/text/transformer) - this an example of multi head attention model with code explanation.
+6. [https://www.tensorflow.org/tutorials/text/transformer](https://www.tensorflow.org/tutorials/text/transformer) - this an example of multi head attention model with code explanation.
 
 ![](Images/image5.png)
-
-# First Cut Approach
-
-\*\*\* Explain in steps about how you want to approach this problem and the initial experiments that you want to do. _**(MINIMUM 200 words)**_ \*\*\*
-
-My first cut solution would be totally based on the applied AI live session of attention model. After seeing the results and analyzing the issues with it then I will try to incorporate new things from the paper and other material.
-
-Steps -
-
-1. Dataset - I have downloaded dataset from this link - [https://drive.google.com/drive/folders/1b3h13rBwTOZRygT6ZIdk4eZ9MKmXSZJa](https://drive.google.com/drive/folders/1b3h13rBwTOZRygT6ZIdk4eZ9MKmXSZJa) ,it&#39;s already cleaned, just need to do preprocessing.
-2. Tokenize of data - I am using TensorFlow tokenization
-3. Creating a data pipeline for the data
-4. Using a sequence-to-sequence model with a attention layer and a SoftMax layer at the end.
-
-Few important points that i need help with-
-
-1. The length of 99.9% for English and Malayalam sentences is around 70, isn&#39;t that too long.
-2. Dictionary size for English and Malayalam is around 54041 and 272131 and when I went through the number of times a word occurs in a sentence, around 30% of words occur only 1 time. So, are there any chances we can remove them without compromising with model performance?
